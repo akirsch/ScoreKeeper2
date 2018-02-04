@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+    <string name="goal">Goal</string>
+    <string name="newGame">New Game</string>
+    <string name="foul">Fouls</string>
+    <string name="startCount">0</string>
+    <string name="colon">:</string>
+    <string name="teamAName">Real Madrid</string>
+    <string name="teamBName">Bayern Munich</string>
+    <string name="stats">Match Stats</string>
+    <string name="stadium">Bernabeu Stadium</string>
+    <string name="start_value">0</string>
+</resources>

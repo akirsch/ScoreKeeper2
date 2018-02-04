@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#121b3e</color>
+    <color name="colorPrimaryDark">#4f5984</color>
+    <color name="colorAccent">#03A9F4</color>
+    <color name="background">#F5F5F5</color>
+    <color name="redCard">#d50000</color>
+    <color name="yellowCard">#ffff00</color>
+    <color name="countColor">#000000</color>
+    <color name="teamBColor">#ca142a</color>
+</resources>

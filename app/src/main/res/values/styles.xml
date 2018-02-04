@@ -1,0 +1,39 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary theme color of the app (sets background color of app bar) -->
+        <item name="colorPrimary">#303F9F</item>
+        <item name="android:colorPrimaryDark">#1A237E</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">#64dd17</item>
+        <item name="android:statusBarColor">#4f5984</item>
+    </style>
+
+    <style name="iconStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+    <style name="IconStyleLand">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+
+    <style name="LinearLayoutStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="LogoTheme">
+        <item name="android:layout_height">@dimen/logo_height</item>
+        <item name="android:layout_width">@dimen/logo_width</item>
+        <item name="android:layout_marginTop">48dp</item>
+
+    </style>
+</resources>
+
+

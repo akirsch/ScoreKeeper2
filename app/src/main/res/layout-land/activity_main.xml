@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        tools:context="com.example.android.scorekeeper.MainActivity">
+
+
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140"
+            android:background="@color/colorPrimary"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:fontFamily="@font/roboto"
+            android:text="@string/stadium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/teamNameSize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/teamA_emblem"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:src="@drawable/barcelona" />
+
+
+        <ImageView
+            android:id="@+id/teamB_emblem"
+            style="@style/LogoTheme"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_8"
+            android:src="@drawable/bayern" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_32"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/startCount"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/scoreSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:fontFamily="@font/roboto"
+                android:text="@string/colon"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/scoreSize" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/startCount"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/scoreSize"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:layout_below="@id/header_image"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:id="@+id/statsTable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_16"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LandGoalsIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/team_a_goals_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_32"
+                    android:indeterminate="false"
+                    android:max="12"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/colorAccent" />
+
+                <ImageView
+                    android:id="@+id/team_a_scoreButton"
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/plus_button" />
+
+                <ImageView
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/soccer3" />
+
+                <ImageView
+                    android:id="@+id/team_b_scoreButton"
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/plus_button" />
+
+                <ProgressBar
+                    android:id="@+id/team_b_goals_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_32"
+                    android:indeterminate="false"
+                    android:max="12"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/teamBColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LandRedCardIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/team_a_redCards_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="7"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/team_a_redCardDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:paddingTop="10dp"
+                    android:text="@string/start_value"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/team_a_redCardButton"
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/plus_button" />
+
+                <ImageView
+                    style="@style/IconStyleLand"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/red_card" />
+
+                <ImageView
+                    android:id="@+id/team_b_redCardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_button" />
+
+                <TextView
+                    android:id="@+id/team_b_redCardDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:text="@string/start_value"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/team_b_redCards_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_32"
+                    android:indeterminate="false"
+                    android:max="7"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/teamBColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/team_a_yellowCards_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="12"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/team_a_yellowCardDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:text="@string/start_value"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/team_a_YellowCardButton"
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/plus_button" />
+
+                <ImageView
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/yellow_card" />
+
+                <ImageView
+                    android:id="@+id/team_b_YellowCardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_button" />
+
+                <TextView
+                    android:id="@+id/team_b_yellowCardDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:text="@string/start_value"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/team_b_yellowCards_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="12"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/teamBColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/team_a_corners_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="15"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/team_a_cornerDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:text="@string/start_value"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/team_a_cornerButton"
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/plus_button" />
+
+                <ImageView
+                    style="@style/IconStyleLand"
+                    android:src="@drawable/corner" />
+
+                <ImageView
+                    android:id="@+id/team_b_cornerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_button" />
+
+                <TextView
+                    android:id="@+id/team_b_cornerDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:text="@string/start_value"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/team_b_corners_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="15"
+                    android:paddingTop="@dimen/dp_20"
+                    android:progress="0"
+                    android:progressTint="@color/teamBColor" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/resetButton"
+            style="@style/iconStyle"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/divider"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_24"
+            android:src="@drawable/reset_icon" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
